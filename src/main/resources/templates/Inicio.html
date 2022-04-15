@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="icon" href="imgs/yamete.jpg">
+	<title>Mi app</title>
+</head>
+
+<body style="background-color: blueviolet;">
+<!--
+	<button class="reproductor">Ingresar</button>
+	<script>
+		let boton = document.querySelector(".reproductor")
+
+		boton.addEventListener("click", () => {
+			let etiquetaAudio = document.createElement("audio")
+			etiquetaAudio.setAttribute("src", "sonido.mp3")
+			etiquetaAudio.volume = 0.05;
+			etiquetaAudio.loop = true
+			etiquetaAudio.play()
+		})
+	</script>
+	
+	
+	
+	<h1 th:text="${mensaje}"></h1>
+	<img src="imgs/yamete.jpg" width="550px" />
+	<h2>Hoy es [[${fecha}]]</h2>-->
+	
+	
+	<h1>Bienvenido</h1>
+	<h2>Oferta de trabajo</h2>
+	<h3 th:text="'Titulo: ' +${nombre} "></h3>
+	<h3 th:text="'Fecha Pub: ' +${fecha} "></h3>
+	<h3 th:text="'Salario Ofrecido: ' +${salario} "></h3>
+	<h3 th:text="'Vigente: ' +${vigente} "></h3>
+	
+
+</body>
+
+</html>
