@@ -1,6 +1,7 @@
 package net.vila.controller;
 
 import java.util.Date;
+import net.vila.model.Vacante;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,6 +43,20 @@ public class HomeController {
 		model.addAttribute("salario",salario);
 		model.addAttribute("vigente",vigente);
 		return "Inicio";
+	}
+	
+	
+	@GetMapping("/detalle")
+	public String MostrarDetalle(Model model) {
+		Vacante v=new Vacante();
+		v.setId(1);
+		v.setNombre("Ingeniero de Comunicaciones");
+		v.setDescripcion("Se solicita ingeniero para dar soporte a intranet");
+		v.setFecha(new Date());
+		v.setSalario(1000.00);
+		model.addAttribute("vacante",v);
+		
+		return "detalle";
 	}
 
 }
