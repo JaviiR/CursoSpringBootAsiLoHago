@@ -13,7 +13,9 @@
 	<table class="table">
 	<thead>
 		<tr >
+			
 			<th class="table-primary">ID</th>
+			<th class="table-dark">LOGO</th>
 			<th class="table-secondary">NOMBRE</th>
 			<th class="table-success">DESCRIPCION</th>
 			<th class="table-danger">FECHA</th>
@@ -23,7 +25,12 @@
 		</tr>
 		</thead>
 		<tr  th:each="vacante : ${vacantes}">
+		
+		
 			<th scope="col" class="table-primary" th:text="${vacante.id}"></th>
+			<th class="table-dark" scope="col">
+		<img th:src="@{/imgs/{img}(img=${vacante.imagen})}" width="100px" height="100px">
+		</th>
 			<td class="table-secondary" th:text="${vacante.nombre}"></td>
 			<td class="table-success" th:text="${vacante.descripcion}"></td>
 			<td class="table-danger" th:text="${vacante.fecha}"></td>

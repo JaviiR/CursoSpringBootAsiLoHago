@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -10,47 +10,45 @@
 </head>
 
 <body style="background-color: blueviolet;">
-<br>
+	<br>
 
-	<button class="btn btn-dark">Play</button>
 
-	<script>
-		let boton = document.querySelector(".btn")
-		let i = 0;
-		boton.addEventListener("click", () => {
-let etiquetaAudio = document.createElement("audio")
-etiquetaAudio.setAttribute("src", "sonido.mp3")
-etiquetaAudio.volume = 1;
-				etiquetaAudio.loop = true
+
+
+
+	<div class="position-absolute top-20 start-50 translate-middle">
+	
+	
+		<button class="btn btn-dark">Play</button>
+
+		<script>
+			let boton = document.querySelector(".btn")
+			let i = 0;
+			boton.addEventListener("click", () => {
+			let etiquetaAudio = document.createElement("audio")
+			etiquetaAudio.setAttribute("src", "sonido.mp3")
+			etiquetaAudio.volume = 1;
+			etiquetaAudio.loop = true
 			if (i == 0) {
-				
-
-				
-				
 				etiquetaAudio.play()
-				
 				i = 1;
-				
 			} else {
-				
+				}
+			})
+		</script>
+		<button type="button" onclick="location.href='/tabla';" class="btn btn-dark">Tablas</button>
+		<button type="button" onclick="location.href='/detalle';" class="btn btn-dark">Detalles</button>
+		<button type="button" onclick="location.href='/listado';" class="btn btn-dark">Listado</button>
 		
-			}
-
-		})
-	</script>
-
-
-
-
-	<button type="button" onclick="location.href='/tabla';" class="btn btn-dark">Tablas</button>
-	<button type="button" onclick="location.href='/detalle';" class="btn btn-dark">Detalles</button>
-	<button type="button" onclick="location.href='/listado';" class="btn btn-dark">Listado</button>
-
+		
+	</div>
 
 
 	<h1 th:text="${mensaje}"></h1>
-	<img src="imgs/yamete.jpg" width="550px" />
-
+	
+	<div class="position-absolute top-50 start-50 translate-middle">
+	<img class="rounded mx-auto d-block" th:src="@{/imgs/yamete.jpg}" width="900px" height="700px" />
+	</div>
 
 
 	<!--<h1>Bienvenido</h1>
