@@ -8,8 +8,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
@@ -36,7 +38,8 @@ public class HomeController {
 	
 	
 	
-	@RequestMapping("/")
+	@GetMapping("/")//mapeo con la anotación especifica para get(Spring 4.3+)
+	//@RequestMapping(value="/",method=RequestMethod.GET)//mapeo con la anotación @RequestMapping 
 	public String Inicio(Model model) {
 		/*model.addAttribute("mensaje","Comenzando Spring desde cero");
 		model.addAttribute("fecha",new Date());
