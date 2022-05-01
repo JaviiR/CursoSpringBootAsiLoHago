@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<html lang="en" >
 <head>
 
 	<link rel="icon" href="imgs/yamete.jpg">
 	<title>Yamete.jpg</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<body style="background-color: blueviolet;">
+<body style="background-color: blueviolet;" >
+
 	<br>
-
-
-
-
-
-	<div class="position-absolute top-20 start-50 translate-middle">
+	
+	<div class="position-absolute top-20 start-50 translate-middle" >
 	
 	
-		<button class="btn btn-dark">Play</button>
+		<button id="btnAudio" class="btn btn-dark" onclick="Audio_P_S()">Play</button>
 
-		<script>
+		<!--<script>
 			let boton = document.querySelector(".btn")
-			let i = 0;
+			
 			boton.addEventListener("click", () => {
 			let etiquetaAudio = document.createElement("audio")
-			etiquetaAudio.setAttribute("src", "sonido.mp3")
+			
+			if (i == 0) {
+				etiquetaAudio.pause()
+				
+			} else {
+				etiquetaAudio.setAttribute("src", "sonido.mp3")
 			etiquetaAudio.volume = 1;
 			etiquetaAudio.loop = true
-			if (i == 0) {
 				etiquetaAudio.play()
-				i = 1;
-			} else {
+				i = 0;
 				}
 			})
-		</script>
+		</script>-->
 		<button type="button" onclick="location.href='/tabla';" class="btn btn-dark">Tablas</button>
 		<button type="button" onclick="location.href='/detalle';" class="btn btn-dark">Detalles</button>
 		<button type="button" onclick="location.href='/listado';" class="btn btn-dark">Listado</button>
@@ -44,12 +45,46 @@
 	</div>
 
 
-	<h1 th:text="${mensaje}"></h1>
-	
-	<div class="position-absolute top-50 start-50 translate-middle">
-	<img class="rounded mx-auto d-block" th:src="@{/imgs/yamete.jpg}" width="900px" height="700px" />
-	</div>
+	<!--<h1 th:text="${mensaje}"></h1>-->
 
+	<!--<div class="position-absolute top-50 start-50 translate-middle">
+	<img class="rounded mx-auto d-block" th:src="@{/imgs/yamete.jpg}" width="900px" height="700px" />
+	</div>-->
+
+	
+	
+	<br>
+		
+<center>
+		<table>
+			<tr>
+				<td><img id="img_1" src="imgs/1.jpg" onclick="seleccionar(1)"/></td>
+				<td><img id="img_2" src="imgs/2.jpg" onclick="seleccionar(2)"/></td>
+				<td><img id="img_3" src="imgs/3.jpg" onclick="seleccionar(3)"/></td>
+			</tr>
+			<tr>
+				<td><img id="img_4" src="imgs/4.jpg" onclick="seleccionar(4)"/></td>
+				<td><img id="img_5" src="imgs/5.jpg" onclick="seleccionar(5)"/></td>
+				<td><img id="img_6" src="imgs/6.jpg" onclick="seleccionar(6)"/></td>
+			</tr>
+			<tr>
+				<td><img id="img_7" src="imgs/7.jpg" onclick="seleccionar(7)"/></td>
+				<td><img id="img_8" src="imgs/8.jpg" onclick="seleccionar(8)"/></td>
+				<td><img id="img_9" src="imgs/9.jpg" onclick="seleccionar(9)"/></td>
+			</tr>
+		</table>
+
+
+
+
+	</center>
+
+
+
+
+
+
+	
 
 	<!--<h1>Bienvenido</h1>
 	<h2>Oferta de trabajo</h2>
@@ -61,6 +96,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+		<script  type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
